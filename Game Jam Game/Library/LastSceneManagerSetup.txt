@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/01b Options.unity
+- path: Assets/_Scenes/04 Toast Tortilla.unity
   isLoaded: 1
   isActive: 1
