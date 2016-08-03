@@ -1,59 +1,52 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using System.Collections;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class DragHandler : MonoBehaviour {
 
-	public static GameObject itemBeingDragged;
-	public AudioSource audioSource;
-	public AudioClip audioClip;
-	Vector3 startPosition;
-	Transform startParent;
+	public GameObject draggedObject; 
+	public MouseMoveController hand; //This is to have acess to the hand's variables to check them
 
+	//public Transform targetTransform;
+
+	public float moveSpeed = 1f;
+
+	public float xOffSet;
+	public float yOffSet;
+
+	// Use this for initialization
 	void Start () {
-		audioSource = GetComponent<AudioSource>();
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
 	}
 
+	//void OnTriggerEnter2D(Collider2D other) {
+	//	if (other.transform.name == "Hand") {
+	//		if (hand.holding == true) {
+	//			draggedObject.transform.position = other.transform.position;
+	//			//draggedObject.transform.position = Vector2.Lerp (transform.position, other.transform.position, moveSpeed);
+	//		}
+	//	}
+	//}
 
-	#region IBeginDragHandler implementation
+	void OnTriggerStay2D(Collider2D other){
+		if (other.transform.name == "Hand") {
+			if (hand.holding == true) {
+				Debug.Log ("True");
+			}
+			if (hand.holding == false) {
+				Debug.Log ("False");
+			}
+			if (hand.holding == true) {
+				
 
-	public void OnBeginDrag (PointerEventData eventData)
-	{
-		audioSource.PlayOneShot(audioClip, 1);
-		itemBeingDragged = gameObject;
-		startPosition = transform.position;
-		startParent = transform.parent;
-		//GetComponent<CanvasGroup>().blocksRaycasts = false;
-		itemBeingDragged.transform.SetAsLastSibling();
-
+				other.transform.position = new Vector3 (other.transform.position.x + xOffSet, other.transform.position.y + yOffSet, other.transform.position.z);
+				draggedObject.transform.position = Vector2.Lerp (transform.position, other.transform.position, moveSpeed);
+			}
+		}
 	}
-
-	#endregion
-
-	#region IDragHandler implementation
-
-	//This moves sets the transform of the object being moved to the mouse input
-	public void OnDrag (PointerEventData eventData)
-	{
-		transform.position = Input.mousePosition;
-	}
-
-	#endregion
-
-	#region IEndDragHandler implementation
-
-	public void OnEndDrag (PointerEventData eventData)
-	{
-		//audioSource.PlayOneShot(audioClip, 1);
-		itemBeingDragged = null;
-		//GetComponent<CanvasGroup>().blocksRaycasts = true;
-		//if (transform.parent != startParent){
-		//	transform.position = startPosition;
-		//}
-	}
-
-	#endregion
-
-
 
 }
