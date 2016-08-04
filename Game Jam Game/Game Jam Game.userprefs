@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/DragHandler.cs">
     <Files>
-      <File FileName="Assets/Scripts/FadeIn.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/TextManager.cs" Line="36" Column="40" />
+      <File FileName="Assets/_Scripts/MouseMoveController.cs" Line="44" Column="21" />
+      <File FileName="Assets/_Scripts/DragHandler.cs" Line="44" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

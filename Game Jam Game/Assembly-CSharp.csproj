@@ -45,12 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\ChipManager.cs" />
+     <Compile Include="Assets\_Scripts\ChipSceneManager.cs" />
      <Compile Include="Assets\_Scripts\DragHandler.cs" />
      <Compile Include="Assets\_Scripts\FadeIn.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
      <Compile Include="Assets\_Scripts\MouseMoveController.cs" />
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <Compile Include="Assets\_Scripts\TextManager.cs" />
+     <Compile Include="Assets\_Scripts\ToasterDoorDragHandler.cs" />
+     <Compile Include="Assets\_Scripts\TortillaEatingSceneManager.cs" />
      <None Include="Assets\Fonts\pixeltype\readme.txt" />
      <None Include="Assets\Fonts\pixeltype\license.txt" />
  <Reference Include="UnityEngine.Networking">
