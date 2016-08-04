@@ -9,7 +9,8 @@ public class MouseMoveController : MonoBehaviour {
 	public Sprite openHand;
 	public Sprite closedHand;
 
-	public bool holding; //Tells whether or not the hand is holding something
+	public bool handGrabbing;
+	public bool handFull;
 
 	private Vector3 mousePosition;
 	public float moveSpeed = 0.1f;
@@ -20,7 +21,8 @@ public class MouseMoveController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spriteRenderer.sprite = openHand;
-		holding = false;
+		handGrabbing = false;
+		handFull = false;
 	}
 	
 	// Update is called once per frame
@@ -38,10 +40,11 @@ public class MouseMoveController : MonoBehaviour {
 
 		if (Input.GetMouseButton (0)) {
 			spriteRenderer.sprite = closedHand; 
-			holding = true;
+			handGrabbing = true;
 		} else {
 			spriteRenderer.sprite = openHand; 
-			holding = false; 
+			handGrabbing = false;
+			handFull = false;
 		}
 	}
 }

@@ -27,7 +27,7 @@ public class ToasterDoorDragHandler : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.transform.name == "Hand") {
-			if (hand.holding == true) {
+			if (hand.handGrabbing == true) {
 				//This keeps the x position of the new vector the same by setting the new x position to the old x position
 				//The Clamp function marks the upper and lower bounds of how far the toaster door can be dragged
 				other.transform.position = new Vector3 (draggedObject.transform.position.x + xOffSet, Mathf.Clamp(other.transform.position.y + yOffSet, bottomLimit, topLimit), other.transform.position.z);
